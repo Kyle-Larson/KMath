@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Coordinate\CoordStatics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D2\D2Transform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D3\D3Statics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D3\D3Transform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PresetColors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Coordinate\Matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Coordinate\NormalizedVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Coordinate\Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D2\Line.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D2\Ray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D2\Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D3\Line.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D3\Plane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D3\Quaternion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D3\Ray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D3\Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\Storage\Array.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\Storage\Matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\Storage\Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Coordinate\Matrix.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Coordinate\Matrix3x3.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Coordinate\Matrix3x4.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Coordinate\Matrix4x3.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Coordinate\Matrix4x4.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Coordinate\NormalizedVector.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Coordinate\NormalizedVector2.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Coordinate\NormalizedVector3.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Coordinate\NormalizedVector4.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Coordinate\Vector.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Coordinate\Vector2.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Coordinate\Vector3.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Coordinate\Vector4.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="D2\Line.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="D2\Ray.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="D3\Line.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="D3\Plane.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="D3\Quaternion.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="D3\Ray.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Color.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Data\Storage\Vector.inl">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>
