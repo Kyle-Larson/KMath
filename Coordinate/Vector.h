@@ -30,13 +30,13 @@ namespace KEngine
 				static const Vector Zero;	//Cannot be constexpr because class is being defined
 				static const Vector One;	//At this point.
 			private:
-				static constexpr size_t numXMVectors = (vectorLength + 3) / 4;
+				constexpr static size_t numXMVectors = (vectorLength + 3) / 4;
 
 				template<size_t rows, size_t columns>
 				friend class Matrix;
 
 			public:
-				constexpr Vector();
+				Vector();
 				Vector(const Data::Storage::Array<float, vectorLength>& p_array);
 				Vector(float fillValue);
 
@@ -63,7 +63,7 @@ namespace KEngine
 				///<summary>Grabs the value from the index provided and returns it (read only)</summary>
 				///<returns>Copy of value from component</returns>
 				template<size_t index>
-				constexpr float GetFloatByIndex() const;
+				float GetFloatByIndex() const;
 
 				///<summary>Grabs the value indicated by index and replicates the value
 				///into each component of a new vector.  New vector's length defaults to
@@ -132,30 +132,30 @@ namespace KEngine
 				static const Vector<2> UnitX;
 				static const Vector<2> UnitY;
 			private:
-				static constexpr size_t numXMVectors = 1;
+				constexpr static size_t numXMVectors = 1;
 
 			public:
-				constexpr Vector();
-				constexpr Vector(const KEngine::Data::Storage::Array<float, 2>& p_array);
-				constexpr Vector(float fillValue);
-				constexpr Vector(float p_x, float p_y);
-				constexpr Vector(const DirectX::FXMVECTOR p_vector);
+				Vector();
+				Vector(const KEngine::Data::Storage::Array<float, 2>& p_array);
+				Vector(float fillValue);
+				Vector(float p_x, float p_y);
+				Vector(const DirectX::FXMVECTOR p_vector);
 
 			public:
-				constexpr operator DirectX::XMVECTOR() const;
+				operator DirectX::XMVECTOR() const;
 				Vector<3> ToVector3(float p_Z) const;
 				Vector<4> ToVector4(float p_Z, float p_W) const;
 
 				bool operator==(const Vector<2>& p_v) const;
 				bool operator!=(const Vector<2>& p_v) const;
 
-				constexpr Vector<2> operator-() const;
+				Vector<2> operator-() const;
 
-				constexpr Vector<2> operator+(const Vector<2>& p_v) const;
-				constexpr Vector<2> operator-(const Vector<2>& p_v) const;
+				Vector<2> operator+(const Vector<2>& p_v) const;
+				Vector<2> operator-(const Vector<2>& p_v) const;
 
-				constexpr Vector<2> operator*(float p_scale) const;
-				constexpr Vector<2> operator/(float p_scale) const;
+				Vector<2> operator*(float p_scale) const;
+				Vector<2> operator/(float p_scale) const;
 
 				Vector<2>& operator+=(const Vector<2>& p_v);
 				Vector<2>& operator-=(const Vector<2>& p_v);
@@ -164,14 +164,14 @@ namespace KEngine
 				Vector<2>& operator/=(float p_scale);
 
 			public:
-				constexpr Vector<2> Normalize() const;
-				constexpr float Magnitude() const;
+				Vector<2> Normalize() const;
+				float Magnitude() const;
 				Vector<2> Orthogonal() const;
 
 				Vector<2> ClampLength(float minLength, float maxLength) const;
 
-				constexpr float Dot(const Vector<2>& p_v) const;
-				constexpr float Cross(const Vector<2>& p_v) const;
+				float Dot(const Vector<2>& p_v) const;
+				float Cross(const Vector<2>& p_v) const;
 				Vector<2> Reflect(const NormalizedVector<2>& p_reflectionNormal) const;
 				Vector<2> Refract(const NormalizedVector<2>& p_refractionNormal, float p_refractionIndex) const;
 				//Memberwise function
@@ -180,7 +180,7 @@ namespace KEngine
 				Vector<2> MemberwiseMultiply(const Vector<2>& p_rhs) const;
 
 				template<size_t index>
-				constexpr float GetFloatByIndex() const;
+				float GetFloatByIndex() const;
 
 				///<summary>Grabs the value indicated by index and replicates the value
 				///into each component of a new vector.  New vector's length defaults to
@@ -232,30 +232,30 @@ namespace KEngine
 				static const Vector<3> UnitY;
 				static const Vector<3> UnitZ;
 			private:
-				static constexpr size_t numXMVectors = 1;
+				constexpr static size_t numXMVectors = 1;
 
 			public:
-				constexpr Vector();
-				constexpr Vector(const KEngine::Data::Storage::Array<float, 3>& p_array);
-				constexpr Vector(float fillValue);
-				constexpr Vector(float p_x, float p_y, float p_z);
-				constexpr Vector(const DirectX::FXMVECTOR p_vector);
+				Vector();
+				Vector(const KEngine::Data::Storage::Array<float, 3>& p_array);
+				Vector(float fillValue);
+				Vector(float p_x, float p_y, float p_z);
+				Vector(const DirectX::FXMVECTOR p_vector);
 
 			public:
-				constexpr operator DirectX::XMVECTOR() const;
+				operator DirectX::XMVECTOR() const;
 				Vector<2> ToVector2() const;
 				Vector<4> ToVector4(float p_W) const;
 
-				constexpr Vector<3> operator-() const;
+				Vector<3> operator-() const;
 
 				bool operator==(const Vector<3>& p_v) const;
 				bool operator!=(const Vector<3>& p_v) const;
 
-				constexpr Vector<3> operator+(const Vector<3>& p_v) const;
-				constexpr Vector<3> operator-(const Vector<3>& p_v) const;
+				Vector<3> operator+(const Vector<3>& p_v) const;
+				Vector<3> operator-(const Vector<3>& p_v) const;
 
-				constexpr Vector<3> operator*(float p_scale) const;
-				constexpr Vector<3> operator/(float p_scale) const;
+				Vector<3> operator*(float p_scale) const;
+				Vector<3> operator/(float p_scale) const;
 
 				Vector<3>& operator+=(const Vector<3>& p_v);
 				Vector<3>& operator-=(const Vector<3>& p_v);
@@ -265,14 +265,14 @@ namespace KEngine
 
 			public:
 
-				constexpr Vector<3> Normalize() const;
-				constexpr float Magnitude() const;
+				Vector<3> Normalize() const;
+				float Magnitude() const;
 				Vector<3> Orthogonal() const;
 
 				Vector<3> ClampLength(float minLength, float maxLength) const;
 
-				constexpr float Dot(const Vector<3>& p_v) const;
-				constexpr Vector<3> Cross(const Vector<3>& p_v) const;
+				float Dot(const Vector<3>& p_v) const;
+				Vector<3> Cross(const Vector<3>& p_v) const;
 				//Memberwise function
 				///<summary>Multiplies every component of this and passed in vector</summary>
 				///<returns>Vector with results of per-component multiplication</returns>
@@ -281,7 +281,7 @@ namespace KEngine
 				Vector<3> Refract(const NormalizedVector<3>& p_refractionNormal, float p_refractionIndex) const;
 
 				template<size_t index>
-				constexpr float GetFloatByIndex() const;
+				float GetFloatByIndex() const;
 
 				template<size_t index, size_t newVectorLength = 3>
 				Vector<newVectorLength> SplatFloatByIndex() const;
@@ -328,30 +328,30 @@ namespace KEngine
 				static const Vector<4> UnitZ;
 				static const Vector<4> UnitW;
 			private:
-				static constexpr size_t numXMVectors = 1;
+				constexpr static size_t numXMVectors = 1;
 
 			public:
-				constexpr Vector();
-				constexpr Vector(const KEngine::Data::Storage::Array<float, 4>& p_array);
-				constexpr Vector(float fillValue);
-				constexpr Vector(float p_x, float p_y, float p_z, float p_w);
-				constexpr Vector(const DirectX::FXMVECTOR p_vector);
+				Vector();
+				Vector(const KEngine::Data::Storage::Array<float, 4>& p_array);
+				Vector(float fillValue);
+				Vector(float p_x, float p_y, float p_z, float p_w);
+				Vector(const DirectX::FXMVECTOR p_vector);
 
 			public:
-				constexpr operator DirectX::XMVECTOR() const;
+				operator DirectX::XMVECTOR() const;
 				Vector<2> ToVector2() const;
 				Vector<3> ToVector3() const;
 
 				bool operator==(const Vector<4>& p_v) const;
 				bool operator!=(const Vector<4>& p_v) const;
 
-				constexpr Vector<4> operator-() const;
+				Vector<4> operator-() const;
 
-				constexpr Vector<4> operator+(const Vector<4>& p_v) const;
-				constexpr Vector<4> operator-(const Vector<4>& p_v) const;
+				Vector<4> operator+(const Vector<4>& p_v) const;
+				Vector<4> operator-(const Vector<4>& p_v) const;
 
-				constexpr Vector<4> operator*(float p_scale) const;
-				constexpr Vector<4> operator/(float p_scale) const;
+				Vector<4> operator*(float p_scale) const;
+				Vector<4> operator/(float p_scale) const;
 
 				Vector<4>& operator+=(const Vector<4>& p_v);
 				Vector<4>& operator-=(const Vector<4>& p_v);
@@ -360,13 +360,13 @@ namespace KEngine
 				Vector<4>& operator/=(float p_scale);
 
 			public:
-				constexpr Vector<4> Normalize() const;
-				constexpr float Magnitude() const;
+				Vector<4> Normalize() const;
+				float Magnitude() const;
 				Vector<4> Orthogonal() const;
 
 				Vector<4> ClampLength(float minLength, float maxLength) const;
 
-				constexpr float Dot(const Vector<4>& p_v) const;
+				float Dot(const Vector<4>& p_v) const;
 				//Memberwise function
 				///<summary>Multiplies every component of this and passed in vector</summary>
 				///<returns>Vector with results of per-component multiplication</returns>
@@ -375,7 +375,7 @@ namespace KEngine
 				Vector<4> Refract(const NormalizedVector<4>& p_refractionNormal, float p_refractionIndex) const;
 
 				template<size_t index>
-				constexpr float GetFloatByIndex() const;
+				float GetFloatByIndex() const;
 
 				template<size_t index, size_t newVectorLength = 4>
 				Vector<newVectorLength> SplatFloatByIndex() const;

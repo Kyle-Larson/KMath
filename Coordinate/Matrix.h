@@ -43,9 +43,9 @@ namespace KEngine
 				friend class Matrix<4, 4>;
 
 			public:
-				constexpr Matrix();
-				constexpr Matrix(const KEngine::Data::Storage::Array<Vector<Matrix::vecLength>, numVectors>& p_matrix);
-				constexpr Matrix(const KEngine::Data::Storage::Matrix<float, rows, columns>& p_matrix);
+				Matrix();
+				Matrix(const KEngine::Data::Storage::Array<Vector<Matrix::vecLength>, numVectors>& p_matrix);
+				Matrix(const KEngine::Data::Storage::Matrix<float, rows, columns>& p_matrix);
 
 			public:
 				template<size_t newColumns>
@@ -90,19 +90,19 @@ namespace KEngine
 				friend class Matrix<4, 4>;
 
 			public:
-				constexpr Matrix();
+				Matrix();
 				Matrix(const KEngine::Data::Storage::Array<Vector<3>, 3>& p_matrix);
 				Matrix(const KEngine::Data::Storage::Matrix<float, 3, 3>& p_matrix);
-				constexpr Matrix(const DirectX::XMMATRIX& p_matrix);
+				Matrix(const DirectX::XMMATRIX& p_matrix);
 
 			public:
 				template<size_t newNumColumns>
 				Matrix<3, newNumColumns> operator*(const Matrix<3, newNumColumns>& p_rhs) const;
 
-				constexpr Matrix<3, 3> operator*(const Matrix<3, 3>& p_rhs) const;
-				constexpr Matrix<3, 4> operator*(const Matrix<3, 4>& p_rhs) const;
+				Matrix<3, 3> operator*(const Matrix<3, 3>& p_rhs) const;
+				Matrix<3, 4> operator*(const Matrix<3, 4>& p_rhs) const;
 
-				constexpr operator DirectX::XMMATRIX() const;
+				operator DirectX::XMMATRIX() const;
 
 				template<size_t index>
 				const Vector<vecLength>& GetVector() const;
@@ -148,19 +148,19 @@ namespace KEngine
 				friend class Matrix<4, 4>;
 
 			public:
-				constexpr Matrix();
-				constexpr Matrix(const KEngine::Data::Storage::Array<Vector<vecLength>, numVectors>& p_matrix);
+				Matrix();
+				Matrix(const KEngine::Data::Storage::Array<Vector<vecLength>, numVectors>& p_matrix);
 				Matrix(const Data::Storage::Matrix<float, 4, 3>& p_matrix);
-				constexpr Matrix(const DirectX::XMMATRIX& p_matrix);
+				Matrix(const DirectX::XMMATRIX& p_matrix);
 
 			public:
 				template<size_t newNumColumns>
 				Matrix<4, newNumColumns> operator*(const Matrix<3, newNumColumns>& p_rhs) const;
 
-				constexpr Matrix<4, 3> operator*(const Matrix<3, 3>& p_rhs) const;
-				constexpr Matrix<4, 4> operator*(const Matrix<3, 4>& p_rhs) const;
+				Matrix<4, 3> operator*(const Matrix<3, 3>& p_rhs) const;
+				Matrix<4, 4> operator*(const Matrix<3, 4>& p_rhs) const;
 
-				constexpr operator DirectX::XMMATRIX() const;
+				operator DirectX::XMMATRIX() const;
 
 				template<size_t index>
 				const Vector<vecLength>& GetVector() const;
@@ -207,19 +207,19 @@ namespace KEngine
 				friend class Matrix<4, 4>;
 
 			public:
-				constexpr Matrix();
-				constexpr Matrix(const KEngine::Data::Storage::Array<Vector<vecLength>, numVectors>& p_matrix);
+				Matrix();
+				Matrix(const KEngine::Data::Storage::Array<Vector<vecLength>, numVectors>& p_matrix);
 				Matrix(const Data::Storage::Matrix<float, 3, 4>& p_matrix);
-				constexpr Matrix(const DirectX::XMMATRIX& p_matrix);
+				Matrix(const DirectX::XMMATRIX& p_matrix);
 
 			public:
 				template<size_t newNumColumns>
 				Matrix<3, newNumColumns> operator*(const Matrix<4, newNumColumns>& p_rhs) const;
 
-				constexpr Matrix<3, 3> operator*(const Matrix<4, 3>& p_rhs) const;
-				constexpr Matrix<3, 4> operator*(const Matrix<4, 4>& p_rhs) const;
+				Matrix<3, 3> operator*(const Matrix<4, 3>& p_rhs) const;
+				Matrix<3, 4> operator*(const Matrix<4, 4>& p_rhs) const;
 
-				constexpr operator DirectX::XMMATRIX() const;
+				operator DirectX::XMMATRIX() const;
 
 				template<size_t index>
 				const Vector<vecLength>& GetVector() const;
@@ -262,19 +262,19 @@ namespace KEngine
 				friend class Matrix<4, 3>;
 
 			public:
-				constexpr Matrix();
-				constexpr Matrix(const KEngine::Data::Storage::Array<Vector<4>, 4>& p_matrix);
+				Matrix();
+				Matrix(const KEngine::Data::Storage::Array<Vector<4>, 4>& p_matrix);
 				Matrix(const Data::Storage::Matrix<float, 4, 4>& p_matrix);
-				constexpr Matrix(const DirectX::XMMATRIX& p_matrix);
+				Matrix(const DirectX::XMMATRIX& p_matrix);
 
 			public:
 				template<size_t newNumColumns>
 				Matrix<4, newNumColumns> operator*(const Matrix<4, newNumColumns>& p_rhs) const;
 				
-				constexpr Matrix<4, 3> operator*(const Matrix<4, 3>& p_rhs) const;
-				constexpr Matrix<4, 4> operator*(const Matrix<4, 4>& p_rhs) const;
+				Matrix<4, 3> operator*(const Matrix<4, 3>& p_rhs) const;
+				Matrix<4, 4> operator*(const Matrix<4, 4>& p_rhs) const;
 
-				constexpr operator DirectX::XMMATRIX() const;
+				operator DirectX::XMMATRIX() const;
 
 				template<size_t index>
 				const Vector<4>& GetVector() const;

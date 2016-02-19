@@ -8,13 +8,13 @@ namespace KEngine
 	{
 		namespace Coordinate
 		{
-			constexpr Vector<3>::Vector() : m_vectorArray() {}
-			constexpr Vector<3>::Vector(const Data::Storage::Array<float, 3>& p_array) :
+			inline Vector<3>::Vector() : m_vectorArray() {}
+			inline Vector<3>::Vector(const Data::Storage::Array<float, 3>& p_array) :
 				m_vectorArray({ DirectX::XMLoadFloat3(reinterpret_cast<const DirectX::XMFLOAT3*>(p_array.data())) }) {}
-			constexpr Vector<3>::Vector(float fillValue) : m_vectorArray({ DirectX::XMVectorReplicate(fillValue) }) {}
-			constexpr Vector<3>::Vector(float p_x, float p_y, float p_z) : m_vectorArray({ DirectX::XMVectorSet(p_x, p_y, p_z, 1.0f) }) {}
-			constexpr Vector<3>::Vector(const DirectX::FXMVECTOR p_vector) : m_vectorArray({ p_vector }) {}
-			constexpr Vector<3>::operator DirectX::XMVECTOR() const
+			inline Vector<3>::Vector(float fillValue) : m_vectorArray({ DirectX::XMVectorReplicate(fillValue) }) {}
+			inline Vector<3>::Vector(float p_x, float p_y, float p_z) : m_vectorArray({ DirectX::XMVectorSet(p_x, p_y, p_z, 1.0f) }) {}
+			inline Vector<3>::Vector(const DirectX::FXMVECTOR p_vector) : m_vectorArray({ p_vector }) {}
+			inline Vector<3>::operator DirectX::XMVECTOR() const
 			{
 				return m_vectorArray[0];
 			}
@@ -29,7 +29,7 @@ namespace KEngine
 				return Vector<4>(newVec);
 			}
 
-			constexpr Vector<3> Vector<3>::operator-() const
+			inline Vector<3> Vector<3>::operator-() const
 			{
 				return Vector<3>(DirectX::XMVectorNegate(m_vectorArray[0]));
 			}
@@ -43,19 +43,19 @@ namespace KEngine
 				return DirectX::XMVector3NotEqual(m_vectorArray[0], p_rhs);
 			}
 
-			constexpr Vector<3> Vector<3>::operator+(const Vector<3>& p_vector) const
+			inline Vector<3> Vector<3>::operator+(const Vector<3>& p_vector) const
 			{
 				return Vector<3>(DirectX::XMVectorAdd(*this, p_vector));
 			}
-			constexpr Vector<3> Vector<3>::operator-(const Vector<3>& p_vector) const
+			inline Vector<3> Vector<3>::operator-(const Vector<3>& p_vector) const
 			{
 				return Vector<3>(DirectX::XMVectorSubtract(*this, p_vector));
 			}
-			constexpr Vector<3> Vector<3>::operator*(float p_scale) const
+			inline Vector<3> Vector<3>::operator*(float p_scale) const
 			{
 				return Vector<3>(DirectX::XMVectorScale(*this, p_scale));
 			}
-			constexpr Vector<3> Vector<3>::operator/(float p_scale) const
+			inline Vector<3> Vector<3>::operator/(float p_scale) const
 			{
 				return operator*(1.0f / p_scale);
 			}
@@ -81,11 +81,11 @@ namespace KEngine
 				return *this;
 			}
 
-			constexpr Vector<3> Vector<3>::Normalize() const
+			inline Vector<3> Vector<3>::Normalize() const
 			{
 				return Vector<3>(DirectX::XMVector3Normalize(m_vectorArray[0]));
 			}
-			constexpr float Vector<3>::Magnitude() const
+			inline float Vector<3>::Magnitude() const
 			{
 				return DirectX::XMVectorGetX(DirectX::XMVector3Length(m_vectorArray[0]));
 			}
@@ -99,11 +99,11 @@ namespace KEngine
 				return Vector<3>(DirectX::XMVector3ClampLength(*this, minLength, maxLength));
 			}
 
-			constexpr float Vector<3>::Dot(const Vector<3>& p_v) const
+			inline float Vector<3>::Dot(const Vector<3>& p_v) const
 			{
 				return DirectX::XMVectorGetX(DirectX::XMVector3Dot(*this, p_v));
 			}
-			constexpr Vector<3> Vector<3>::Cross(const Vector<3>& p_v) const
+			inline Vector<3> Vector<3>::Cross(const Vector<3>& p_v) const
 			{
 				return Vector<3>(DirectX::XMVector3Cross(*this, p_v));
 			}
@@ -117,7 +117,7 @@ namespace KEngine
 			}
 
 			template<size_t index>
-			constexpr float Vector<3>::GetFloatByIndex() const
+			inline float Vector<3>::GetFloatByIndex() const
 			{
 				static_assert(index < 3, "Invalid index given");
 				return DirectX::XMVectorGetByIndex(m_vectorArray[0], index);

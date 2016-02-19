@@ -25,7 +25,7 @@ namespace KEngine
 				_aligned_free(ptr);
 			}
 
-			constexpr Matrix<3, 3>::Matrix() : m_matrix(DirectX::XMVectorZero(), DirectX::XMVectorZero(), DirectX::XMVectorZero(), DirectX::XMVectorZero()) {}
+			inline Matrix<3, 3>::Matrix() : m_matrix(DirectX::XMVectorZero(), DirectX::XMVectorZero(), DirectX::XMVectorZero(), DirectX::XMVectorZero()) {}
 			inline Matrix<3, 3>::Matrix(const KEngine::Data::Storage::Array<Vector<3>, 3>& p_matrix)
 				: m_matrix()
 			{
@@ -45,12 +45,12 @@ namespace KEngine
 #endif
 			{
 			}
-			constexpr Matrix<3, 3>::Matrix(const DirectX::XMMATRIX& p_matrix)
+			inline Matrix<3, 3>::Matrix(const DirectX::XMMATRIX& p_matrix)
 				: m_matrix(p_matrix)
 			{
 			}
 
-			constexpr Matrix<3, 3>::operator DirectX::XMMATRIX() const
+			inline Matrix<3, 3>::operator DirectX::XMMATRIX() const
 			{
 				return m_matrix;
 			}
@@ -80,7 +80,7 @@ namespace KEngine
 
 				return Matrix<3, newNumColumns>(dataContainer);
 			}
-			constexpr Matrix<3, 3> Matrix<3, 3>::operator*(const Matrix<3, 3>& p_rhs) const
+			inline Matrix<3, 3> Matrix<3, 3>::operator*(const Matrix<3, 3>& p_rhs) const
 			{
 #if !defined(COLUMN_MAJOR)
 				return Matrix<3, 3>(DirectX::XMMatrixMultiply(m_matrix, p_rhs.m_matrix));
@@ -88,7 +88,7 @@ namespace KEngine
 				return Matrix<3, 3>(DirectX::XMMatrixMultiply(p_rhs.m_matrix, m_matrix));
 #endif
 			}
-			constexpr Matrix<3, 4> Matrix<3, 3>::operator*(const Matrix<3, 4>& p_rhs) const
+			inline Matrix<3, 4> Matrix<3, 3>::operator*(const Matrix<3, 4>& p_rhs) const
 			{
 #if !defined(COLUMN_MAJOR)
 				return Matrix<3, 4>(DirectX::XMMatrixMultiply(m_matrix, p_rhs.m_matrix));

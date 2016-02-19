@@ -45,14 +45,14 @@ namespace KEngine
 			const Matrix<rows, columns> Matrix<rows, columns>::Identity = MakeIdentity();
 
 			template<size_t rows, size_t columns>
-			constexpr Matrix<rows, columns>::Matrix() : m_matrix() {}
+			inline Matrix<rows, columns>::Matrix() : m_matrix() {}
 			template<size_t rows, size_t columns>
-			constexpr Matrix<rows, columns>::Matrix(const KEngine::Data::Storage::Array<Vector<Matrix<rows, columns>::vecLength>, numVectors>& p_matrix)
+			inline Matrix<rows, columns>::Matrix(const KEngine::Data::Storage::Array<Vector<Matrix<rows, columns>::vecLength>, numVectors>& p_matrix)
 				: m_matrix(p_matrix)
 			{
 			}
 			template<size_t rows, size_t columns>
-			constexpr Matrix<rows, columns>::Matrix(const KEngine::Data::Storage::Matrix<float, rows, columns>& p_matrix)
+			inline Matrix<rows, columns>::Matrix(const KEngine::Data::Storage::Matrix<float, rows, columns>& p_matrix)
 			{
 				Load(p_matrix);
 			}
@@ -62,8 +62,8 @@ namespace KEngine
 			inline Matrix<rows, newColumns> Matrix<rows, columns>::operator*(const Matrix<columns, newColumns>& p_rhs) const
 			{
             #if !defined(COLUMN_MAJOR)
-				constexpr size_t numberNewVectors = rows;
-				constexpr size_t newVectorSize = newColumns;
+				inline size_t numberNewVectors = rows;
+				inline size_t newVectorSize = newColumns;
 				const Data::Storage::Array<Vector<columns>, rows>& lhsVectors = GetVectors();
 				const Data::Storage::Array<Vector<newColumns>, columns>& rhsVectors = p_rhs.GetVectors();
             #else

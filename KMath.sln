@@ -5,7 +5,10 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KMath", "KMath.vcxproj", "{363355D9-7EDD-49D2-A217-C23D656812A1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KMathTest", "KMathTest.vcxproj", "{3AE789E2-B897-49C1-B079-B877283BD9D5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KMathTest", "KMathTest\KMathTest.vcxproj", "{7EAEF3D3-0E69-4A22-928F-8B0B6C0CE3C0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{363355D9-7EDD-49D2-A217-C23D656812A1} = {363355D9-7EDD-49D2-A217-C23D656812A1}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,14 +26,14 @@ Global
 		{363355D9-7EDD-49D2-A217-C23D656812A1}.Release|x64.Build.0 = Release|x64
 		{363355D9-7EDD-49D2-A217-C23D656812A1}.Release|x86.ActiveCfg = Release|Win32
 		{363355D9-7EDD-49D2-A217-C23D656812A1}.Release|x86.Build.0 = Release|Win32
-		{3AE789E2-B897-49C1-B079-B877283BD9D5}.Debug|x64.ActiveCfg = Debug|x64
-		{3AE789E2-B897-49C1-B079-B877283BD9D5}.Debug|x64.Build.0 = Debug|x64
-		{3AE789E2-B897-49C1-B079-B877283BD9D5}.Debug|x86.ActiveCfg = Debug|Win32
-		{3AE789E2-B897-49C1-B079-B877283BD9D5}.Debug|x86.Build.0 = Debug|Win32
-		{3AE789E2-B897-49C1-B079-B877283BD9D5}.Release|x64.ActiveCfg = Release|x64
-		{3AE789E2-B897-49C1-B079-B877283BD9D5}.Release|x64.Build.0 = Release|x64
-		{3AE789E2-B897-49C1-B079-B877283BD9D5}.Release|x86.ActiveCfg = Release|Win32
-		{3AE789E2-B897-49C1-B079-B877283BD9D5}.Release|x86.Build.0 = Release|Win32
+		{7EAEF3D3-0E69-4A22-928F-8B0B6C0CE3C0}.Debug|x64.ActiveCfg = Debug|x64
+		{7EAEF3D3-0E69-4A22-928F-8B0B6C0CE3C0}.Debug|x64.Build.0 = Debug|x64
+		{7EAEF3D3-0E69-4A22-928F-8B0B6C0CE3C0}.Debug|x86.ActiveCfg = Debug|Win32
+		{7EAEF3D3-0E69-4A22-928F-8B0B6C0CE3C0}.Debug|x86.Build.0 = Debug|Win32
+		{7EAEF3D3-0E69-4A22-928F-8B0B6C0CE3C0}.Release|x64.ActiveCfg = Release|x64
+		{7EAEF3D3-0E69-4A22-928F-8B0B6C0CE3C0}.Release|x64.Build.0 = Release|x64
+		{7EAEF3D3-0E69-4A22-928F-8B0B6C0CE3C0}.Release|x86.ActiveCfg = Release|Win32
+		{7EAEF3D3-0E69-4A22-928F-8B0B6C0CE3C0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

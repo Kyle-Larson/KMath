@@ -51,7 +51,7 @@ namespace KEngine
 			const Vector<vectorLength> Vector<vectorLength>::One = Vector<vectorLength>(1.0f);
 
 			template<size_t vectorLength>
-			constexpr Vector<vectorLength>::Vector() : m_vectorArray() {}
+			inline Vector<vectorLength>::Vector() : m_vectorArray() {}
 			//MARK Constexpr++14
 			template<size_t vectorLength>
 			inline Vector<vectorLength>::Vector(const Data::Storage::Array<float, vectorLength>& p_array) : m_vectorArray()
@@ -277,7 +277,7 @@ namespace KEngine
 			
 			template<size_t vectorLength>
 			template<size_t index>
-			constexpr float Vector<vectorLength>::GetFloatByIndex() const
+			inline float Vector<vectorLength>::GetFloatByIndex() const
 			{
 				static_assert(index < vectorLength, "Invalid index to access!");
 				return DirectX::XMVectorGetByIndex(m_vectorArray[index / 4], index % 4);

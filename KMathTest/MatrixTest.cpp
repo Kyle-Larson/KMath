@@ -175,22 +175,22 @@ namespace KMathTest
 		TEST_METHOD(Multiplication)
 		{
 			Storage::Matrix<float, 6, 5> inputA
-				= { 
+				= {
 				Storage::Array<float, 5>{1.0f, 2.0f, 3.0f, 4.0f, 5.0f},
 				Storage::Array<float, 5>{6.0f, 7.0f, 8.0f, 9.0f, 10.0f},
 				Storage::Array<float, 5>{11.0f, 12.0f, 13.0f, 14.0f, 15.0f},
 				Storage::Array<float, 5>{16.0f, 17.0f, 18.0f, 19.0f, 20.0f},
 				Storage::Array<float, 5>{21.0f, 22.0f, 23.0f, 24.0f, 25.0f},
-				Storage::Array<float, 5>{26.0f, 27.0f, 28.0f, 29.0f, 30.0f} 
+				Storage::Array<float, 5>{26.0f, 27.0f, 28.0f, 29.0f, 30.0f}
 			};
-			
+
 			Storage::Matrix<float, 5, 2> inputB
-				= { 
+				= {
 				Storage::Array<float, 2>{1.0f, 2.0f},
 				Storage::Array<float, 2>{3.0f, 4.0f},
 				Storage::Array<float, 2>{5.0f, 6.0f},
 				Storage::Array<float, 2>{7.0f, 8.0f},
-				Storage::Array<float, 2>{9.0f, 10.0f} 
+				Storage::Array<float, 2>{9.0f, 10.0f}
 			};
 
 			Storage::Matrix<float, 6, 2> expectedOutput
@@ -224,12 +224,12 @@ namespace KMathTest
 		TEST_METHOD(Transpose)
 		{
 			Storage::Matrix<float, 5, 4> inputA
-				= { 
+				= {
 				Storage::Array<float, 4>{1.0f, 2.0f, 3.0f, 4.0f},
 				Storage::Array<float, 4>{5.0f, 6.0f, 7.0f, 8.0f},
 				Storage::Array<float, 4>{9.0f, 10.0f, 11.0f, 12.0f},
 				Storage::Array<float, 4>{13.0f, 14.0f, 15.0f, 16.0f},
-				Storage::Array<float, 4>{17.0f, 18.0f, 19.0f, 20.0f} 
+				Storage::Array<float, 4>{17.0f, 18.0f, 19.0f, 20.0f}
 			};
 
 			Coordinate::Matrix<5, 4> matA = Coordinate::Matrix<5, 4>(inputA);
@@ -337,9 +337,9 @@ namespace KMathTest
 			Storage::Array<float, resultLength> resultArray = resultVec.Unload();
 
 #if !defined(COLUMN_MAJOR)
-			Storage::Array<float, 5> expectedArray = {371.0f, 392.0f, 413.0f, 434.0f, 455.0f};
+			Storage::Array<float, 5> expectedArray = { 371.0f, 392.0f, 413.0f, 434.0f, 455.0f };
 #else
-			Storage::Array<float, 6> expectedArray = {55.0f, 130.0f, 205.0f, 280.0f, 355.0f, 430.0f};
+			Storage::Array<float, 6> expectedArray = { 55.0f, 130.0f, 205.0f, 280.0f, 355.0f, 430.0f };
 #endif
 
 			for (size_t i = 0; i < resultLength; ++i)

@@ -8,7 +8,7 @@ using namespace KEngine::Math::Coordinate;
 using namespace KEngine::Data::Storage;
 
 namespace KMathTest
-{		
+{
 	TEST_CLASS(VectorTests)
 	{
 	public:
@@ -63,7 +63,7 @@ namespace KMathTest
 		TEST_METHOD(VectorAdd)
 		{
 			Array<float, 5> arrayA{ 1.0f, 2.0f, 3.0f, 4.0f, 5.0f };
-			
+
 			Vector<5> vecA = Vector<5>(arrayA);
 			Vector<5> vecB = Vector<5>(arrayA);
 

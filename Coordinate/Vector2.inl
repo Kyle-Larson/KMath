@@ -9,14 +9,14 @@ namespace KEngine
 	{
 		namespace Coordinate
 		{
-			constexpr Vector<2>::Vector() : m_vectorArray() {}
-			constexpr Vector<2>::Vector(const Data::Storage::Array<float, 2>& p_array) :
+			inline Vector<2>::Vector() : m_vectorArray() {}
+			inline Vector<2>::Vector(const Data::Storage::Array<float, 2>& p_array) :
 				m_vectorArray({ DirectX::XMLoadFloat2(reinterpret_cast<const DirectX::XMFLOAT2*>(p_array.data())) }) {}
-			constexpr Vector<2>::Vector(float fillValue) : m_vectorArray({ DirectX::XMVectorReplicate(fillValue) }) {}
-			constexpr Vector<2>::Vector(float p_x, float p_y) : m_vectorArray({ DirectX::XMVectorSet(p_x, p_y, 0.0f, 1.0f) }) {}
-			constexpr Vector<2>::Vector(const DirectX::FXMVECTOR p_vector) : m_vectorArray({ p_vector }) {}
+			inline Vector<2>::Vector(float fillValue) : m_vectorArray({ DirectX::XMVectorReplicate(fillValue) }) {}
+			inline Vector<2>::Vector(float p_x, float p_y) : m_vectorArray({ DirectX::XMVectorSet(p_x, p_y, 0.0f, 1.0f) }) {}
+			inline Vector<2>::Vector(const DirectX::FXMVECTOR p_vector) : m_vectorArray({ p_vector }) {}
 
-			constexpr Vector<2>::operator DirectX::XMVECTOR() const
+			inline Vector<2>::operator DirectX::XMVECTOR() const
 			{
 				return m_vectorArray[0];
 			}
@@ -36,7 +36,7 @@ namespace KEngine
 				return Vector<4>(theirVec);
 			}
 
-			constexpr Vector<2> Vector<2>::operator-() const
+			inline Vector<2> Vector<2>::operator-() const
 			{
 				return Vector<2>(DirectX::XMVectorNegate(m_vectorArray[0]));
 			}
@@ -50,19 +50,19 @@ namespace KEngine
 				return DirectX::XMVector2NotEqual(m_vectorArray[0], p_rhs);
 			}
 
-			constexpr Vector<2> Vector<2>::operator+(const Vector<2>& p_vector) const
+			inline Vector<2> Vector<2>::operator+(const Vector<2>& p_vector) const
 			{
 				return Vector<2>(DirectX::XMVectorAdd(*this, p_vector));
 			}
-			constexpr Vector<2> Vector<2>::operator-(const Vector<2>& p_vector) const
+			inline Vector<2> Vector<2>::operator-(const Vector<2>& p_vector) const
 			{
 				return Vector<2>(DirectX::XMVectorSubtract(*this, p_vector));
 			}
-			constexpr Vector<2> Vector<2>::operator*(float p_scale) const
+			inline Vector<2> Vector<2>::operator*(float p_scale) const
 			{
 				return Vector<2>(DirectX::XMVectorScale(*this, p_scale));
 			}
-			constexpr Vector<2> Vector<2>::operator/(float p_scale) const
+			inline Vector<2> Vector<2>::operator/(float p_scale) const
 			{
 				return operator*(1.0f / p_scale);
 			}
@@ -88,11 +88,11 @@ namespace KEngine
 				return *this;
 			}
 
-			constexpr Vector<2> Vector<2>::Normalize() const
+			inline Vector<2> Vector<2>::Normalize() const
 			{
 				return Vector<2>(DirectX::XMVector2Normalize(m_vectorArray[0]));
 			}
-			constexpr float Vector<2>::Magnitude() const
+			inline float Vector<2>::Magnitude() const
 			{
 				return DirectX::XMVectorGetX(DirectX::XMVector2Length(m_vectorArray[0]));
 			}
@@ -104,11 +104,11 @@ namespace KEngine
 			{
 				return Vector<2>(DirectX::XMVector2ClampLength(*this, minLength, maxLength));
 			}
-			constexpr float Vector<2>::Dot(const Vector<2>& p_v) const
+			inline float Vector<2>::Dot(const Vector<2>& p_v) const
 			{
 				return DirectX::XMVectorGetX(DirectX::XMVector2Dot(*this, p_v));
 			}
-			constexpr float Vector<2>::Cross(const Vector<2>& p_v) const
+			inline float Vector<2>::Cross(const Vector<2>& p_v) const
 			{
 				return DirectX::XMVectorGetX(DirectX::XMVector2Cross(*this, p_v));
 			}
@@ -122,7 +122,7 @@ namespace KEngine
 			}
 
 			template<size_t index>
-			constexpr float Vector<2>::GetFloatByIndex() const
+			inline float Vector<2>::GetFloatByIndex() const
 			{
 				static_assert(index < 2, "Invalid index given");
 				return DirectX::XMVectorGetByIndex(m_vectorArray[0], index);

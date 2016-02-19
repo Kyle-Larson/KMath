@@ -98,7 +98,7 @@ namespace KMathTest
 
 			Storage::Matrix<float, 4, 3> inputB
 				= {
-				
+
 				Storage::Array<float, 3>{13.0f, 14.0f, 15.0f},
 				Storage::Array<float, 3>{16.0f, 17.0f, 18.0f},
 				Storage::Array<float, 3>{19.0f, 20.0f, 21.0f},
