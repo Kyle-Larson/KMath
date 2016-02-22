@@ -62,8 +62,8 @@ namespace KEngine
 			inline Matrix<rows, newColumns> Matrix<rows, columns>::operator*(const Matrix<columns, newColumns>& p_rhs) const
 			{
             #if !defined(COLUMN_MAJOR)
-				inline size_t numberNewVectors = rows;
-				inline size_t newVectorSize = newColumns;
+				constexpr size_t numberNewVectors = rows;
+				constexpr size_t newVectorSize = newColumns;
 				const Data::Storage::Array<Vector<columns>, rows>& lhsVectors = GetVectors();
 				const Data::Storage::Array<Vector<newColumns>, columns>& rhsVectors = p_rhs.GetVectors();
             #else
