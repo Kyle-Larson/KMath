@@ -16,7 +16,7 @@ namespace KEngine
 			template<size_t vectorLength>
 			void* Vector<vectorLength>::operator new(std::size_t size)
 			{
-				return _aligned_malloc(size, XMVectorAlignment);
+				return _aligned_malloc(size, M128Alignment);
 			}
 			#pragma endregion
 
@@ -24,7 +24,7 @@ namespace KEngine
 			template<size_t vectorLength>
 			void* Vector<vectorLength>::operator new[](std::size_t size)
 			{
-				return _aligned_malloc(size, XMVectorAlignment);
+				return _aligned_malloc(size, M128Alignment);
 			}
 			#pragma endregion
 

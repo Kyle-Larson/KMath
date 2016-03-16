@@ -1,8 +1,10 @@
 #pragma once
 
 #include <DirectXMath.h>
-#include "Coordinate/Vector.h"
-#include "Coordinate/NormalizedVector.h"
+
+#include <KMathConstants.h>
+#include <Coordinate/Vector.h>
+#include <Coordinate/NormalizedVector.h>
 
 namespace KEngine
 {

@@ -1,6 +1,8 @@
 #pragma once
 
 #include <DirectXMath.h>
+
+#include <KMathConstants.h>
 #include "Vector.h"
 
 namespace KEngine
@@ -10,7 +12,7 @@ namespace KEngine
 		namespace Coordinate
 		{
 			template<size_t vectorLength>
-			class NormalizedVector
+			class alignas(M128Alignment) NormalizedVector
 			{
 			public:
 				NormalizedVector();

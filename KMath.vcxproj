@@ -136,6 +136,8 @@
     <ClInclude Include="Data\Storage\Array.h" />
     <ClInclude Include="Data\Storage\Matrix.h" />
     <ClInclude Include="Data\Storage\Vector.h" />
+    <ClInclude Include="KMath.h" />
+    <ClInclude Include="KMathConstants.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Color.inl" />

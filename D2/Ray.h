@@ -1,5 +1,6 @@
 #pragma once
 
+#include <KMathConstants.h>
 #include "Coordinate/Vector.h"
 
 namespace KEngine

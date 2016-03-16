@@ -10,11 +10,11 @@ namespace KEngine
 		{
 			inline void* Matrix<3, 3>::operator new(std::size_t size)
 			{
-				return _aligned_malloc(size, XMVectorAlignment);
+				return _aligned_malloc(size, M128Alignment);
 			}
 			inline void* Matrix<3, 3>::operator new[](std::size_t size)
 			{
-				return _aligned_malloc(size, XMVectorAlignment);
+				return _aligned_malloc(size, M128Alignment);
 			}
 			inline void Matrix<3, 3>::operator delete(void* ptr, std::size_t size)
 			{

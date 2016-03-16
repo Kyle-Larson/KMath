@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 #include "Data/Storage/Matrix.h"
-#include "Coordinate/Matrix.h"
+#include <KMath.h>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace KEngine::Math;

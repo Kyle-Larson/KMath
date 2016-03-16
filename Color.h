@@ -1,8 +1,10 @@
 #pragma once
 
 #include <DirectXMath.h>
+
+#include <KMathConstants.h>
 #include <DirectXColors.h>
-#include "Data/Storage/Array.h"
+#include <Data/Storage/Array.h>
 
 namespace KEngine
 {
@@ -19,7 +21,7 @@ namespace KEngine
 		};
 
 		template<ColorLayout layout>
-		class Color
+		class alignas(Math::M128Alignment) Color
 		{
 		public:
 			Color();

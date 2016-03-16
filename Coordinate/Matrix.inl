@@ -11,12 +11,12 @@ namespace KEngine
 			template<size_t rows, size_t columns>
 			inline void* Matrix<rows, columns>::operator new(std::size_t size)
 			{
-				return _aligned_malloc(size, XMVectorAlignment);
+				return _aligned_malloc(size, M128Alignment);
 			}
 			template<size_t rows, size_t columns>
 			inline void* Matrix<rows, columns>::operator new[](std::size_t size)
 			{
-				return _aligned_malloc(size, XMVectorAlignment);
+				return _aligned_malloc(size, M128Alignment);
 			}
 			template<size_t rows, size_t columns>
 			inline void Matrix<rows, columns>::operator delete(void* ptr, std::size_t size)
@@ -47,7 +47,7 @@ namespace KEngine
 			template<size_t rows, size_t columns>
 			inline Matrix<rows, columns>::Matrix() : m_matrix() {}
 			template<size_t rows, size_t columns>
-			inline Matrix<rows, columns>::Matrix(const KEngine::Data::Storage::Array<Vector<Matrix<rows, columns>::vecLength>, numVectors>& p_matrix)
+			inline Matrix<rows, columns>::Matrix(const KEngine::Data::Storage::Array<Vector<vecLength>, numVectors>& p_matrix)
 				: m_matrix(p_matrix)
 			{
 			}
@@ -200,7 +200,7 @@ namespace KEngine
 				Data::Storage::Matrix<float, rows, columns> returnData;
 				for (size_t i = 0; i < numVectors; ++i)
 				{
-					#if defined(ROW_MAJOR)
+					#if !defined(COLUMN_MAJOR)
 					returnData[i] = m_matrix[i].Unload();
 					#else
 					Data::Storage::Array<float, vecLength> vectorData = m_matrix[i].Unload();
@@ -224,9 +224,9 @@ namespace KEngine
 			{
 				for (size_t i = 0; i < numVectors; ++i)
 				{
-					#if defined(ROW_MAJOR)
-					m_matrix[i] = Vector<vecLength>(p_matrix[i]);
-					#else
+					#if !defined(COLUMN_MAJOR)
+                    m_matrix[i] = Vector<vecLength>(p_matrix[i]);
+                    #else
 					Data::Storage::Array<float, vecLength> vectorData;
 					for (size_t j = 0; j < vecLength; ++j)
 					{

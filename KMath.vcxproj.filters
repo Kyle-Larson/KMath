@@ -77,6 +77,12 @@
     <ClInclude Include="Data\Storage\Vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="KMath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KMathConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Coordinate\Matrix.inl">

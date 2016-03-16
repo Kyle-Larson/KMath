@@ -1,8 +1,10 @@
 #pragma once
 
 #include <DirectXMath.h>
-#include "Coordinate/Vector.h"
-#include "Coordinate/Matrix.h"
+
+#include <KMathConstants.h>
+#include <Coordinate/Vector.h>
+#include <Coordinate/Matrix.h>
 
 namespace KEngine
 {
@@ -10,7 +12,7 @@ namespace KEngine
 	{
 		namespace D3
 		{
-			class Quaternion
+			class alignas(M128Alignment) Quaternion
 			{
 				#pragma region Public Interface
 			public:
@@ -35,7 +37,7 @@ namespace KEngine
 				Quaternion(const Coordinate::Vector<3>& p_axis, float p_angle);
 				Quaternion(float p_roll, float p_pitch, float p_yaw);
 				Quaternion(const Coordinate::Matrix<3, 3>& p_rotationMatrix);
-				constexpr Quaternion(const DirectX::XMVECTOR& p_quatVector);
+				constexpr explicit Quaternion(const DirectX::XMVECTOR& p_quatVector);
 				#pragma endregion
 				
 				#pragma region Operators

@@ -1,8 +1,10 @@
 #pragma once
 
 #include <DirectXMath.h>
-#include "Coordinate/Vector.h"
-#include "Coordinate/NormalizedVector.h"
+
+#include <KMathConstants.h>
+#include <Coordinate/Vector.h>
+#include <Coordinate/NormalizedVector.h>
 #include "Line.h"
 
 namespace KEngine
@@ -11,7 +13,7 @@ namespace KEngine
 	{
 		namespace D3
 		{
-			class Plane
+			class alignas(M128Alignment) Plane
 			{
 				#pragma region Public Interface
 			public:
@@ -45,7 +47,7 @@ namespace KEngine
 
 #pragma region Private Interface
 			private:
-				Plane(const DirectX::XMVECTOR& p_vector);
+				explicit Plane(DirectX::XMVECTOR p_vector);
 
 				DirectX::XMVECTOR m_vector;
 #pragma endregion

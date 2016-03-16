@@ -1,8 +1,10 @@
 #pragma once
 
 #include <DirectXMath.h>
-#include "Data\Storage\Array.h"
-#include "Coordinate\Vector.h"
+
+#include <KMathConstants.h>
+#include <Data\Storage\Array.h>
+#include <Coordinate\Vector.h>
 #include "Ray.h"
 
 namespace KEngine

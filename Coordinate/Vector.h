@@ -1,8 +1,7 @@
 #pragma once
 
-#include <DirectXMath.h>
-
-#include "Data/Storage/Array.h"
+#include <KMathConstants.h>
+#include <Data/Storage/Array.h>
 
 namespace KEngine
 {
@@ -13,10 +12,8 @@ namespace KEngine
 			template<size_t vectorLength>
 			class NormalizedVector;
 
-			constexpr size_t XMVectorAlignment = 16;
-
 			template<size_t vectorLength>
-			class alignas(XMVectorAlignment) Vector
+			class alignas(M128Alignment) Vector
 			{
 				template<size_t rows, size_t columns>
 				friend class Matrix;
@@ -110,7 +107,7 @@ namespace KEngine
 			};
 
 			template<>
-			class alignas(XMVectorAlignment)Vector<2>
+			class alignas(M128Alignment) Vector<2>
 			{
 				template<size_t vectorLength>
 				friend class Vector;
@@ -209,7 +206,7 @@ namespace KEngine
 			};
 
 			template<>
-			class alignas(XMVectorAlignment)Vector<3>
+			class alignas(M128Alignment) Vector<3>
 			{
 				template<size_t vectorLength>
 				friend class Vector;
@@ -304,7 +301,7 @@ namespace KEngine
 			};
 
 			template<>
-			class alignas(XMVectorAlignment)Vector<4>
+			class alignas(M128Alignment) Vector<4>
 			{
 				template<size_t vectorLength>
 				friend class Vector;

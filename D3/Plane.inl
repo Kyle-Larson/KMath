@@ -22,8 +22,8 @@ namespace KEngine
 					p_pointAOnPlane,
 					p_pointBOnPlane,
 					p_pointCOnPlane)) {}
-			inline Plane::Plane(const DirectX::XMVECTOR& p_vector)
-				: m_vector(p_vector) {}
+			inline Plane::Plane(DirectX::XMVECTOR p_vector)
+				: m_vector(std::move(p_vector)) {}
 
 			inline bool Plane::operator==(const Plane& p_rhs) const
 			{

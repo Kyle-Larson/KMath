@@ -1,11 +1,9 @@
 #pragma once
 
-//If you want to use Column Major, uncomment this pragma
-#define COLUMN_MAJOR
-#include <DirectXMath.h>
+#include <KMathConstants.h>
 
 #include "Vector.h"
-#include "Data/Storage/Matrix.h"
+#include <Data/Storage/Matrix.h>
 
 namespace KEngine
 {
@@ -14,14 +12,14 @@ namespace KEngine
 		namespace Coordinate
 		{
 			template<size_t rows, size_t columns>
-			class alignas(XMVectorAlignment) Matrix
+			class alignas(M128Alignment) Matrix
 			{
 				#if !defined(COLUMN_MAJOR)
-				static const size_t numVectors = rows;
-				static const size_t vecLength = columns;
+				static constexpr size_t numVectors = rows;
+				static constexpr size_t vecLength = columns;
 				#else
-				static const size_t numVectors = columns;
-				static const size_t vecLength = rows;
+				static constexpr size_t numVectors = columns;
+				static constexpr size_t vecLength = rows;
 				#endif
 
 			public:
@@ -44,7 +42,7 @@ namespace KEngine
 
 			public:
 				Matrix();
-				Matrix(const KEngine::Data::Storage::Array<Vector<Matrix::vecLength>, numVectors>& p_matrix);
+				Matrix(const KEngine::Data::Storage::Array<Vector<vecLength>, numVectors>& p_matrix);
 				Matrix(const KEngine::Data::Storage::Matrix<float, rows, columns>& p_matrix);
 
 			public:
@@ -69,10 +67,10 @@ namespace KEngine
 			};
 
 			template<>
-			class alignas(XMVectorAlignment) Matrix<3, 3>
+			class alignas(M128Alignment) Matrix<3, 3>
 			{
-				static const size_t numVectors = 3;
-				static const size_t vecLength = 3;
+				static constexpr size_t numVectors = 3;
+				static constexpr size_t vecLength = 3;
 
 			public:
 				static void* operator new(std::size_t size);
@@ -123,14 +121,14 @@ namespace KEngine
 			};
 
 			template<>
-			class alignas(XMVectorAlignment) Matrix<4, 3>
+			class alignas(M128Alignment) Matrix<4, 3>
 			{
 #if !defined(COLUMN_MAJOR)
-				static const size_t numVectors = 4;
-				static const size_t vecLength = 3;
+				static constexpr size_t numVectors = 4;
+				static constexpr size_t vecLength = 3;
 #else
-				static const size_t numVectors = 3;
-				static const size_t vecLength = 4;
+				static constexpr size_t numVectors = 3;
+				static constexpr size_t vecLength = 4;
 #endif
 			public:
 				static void* operator new(std::size_t size);
@@ -182,14 +180,14 @@ namespace KEngine
 			};
 
 			template<>
-			class alignas(XMVectorAlignment)Matrix<3, 4>
+			class alignas(M128Alignment) Matrix<3, 4>
 			{
 #if !defined(COLUMN_MAJOR)
-				static const size_t numVectors = 3;
-				static const size_t vecLength = 4;
+				static constexpr size_t numVectors = 3;
+				static constexpr size_t vecLength = 4;
 #else
-				static const size_t numVectors = 4;
-				static const size_t vecLength = 3;
+				static constexpr size_t numVectors = 4;
+				static constexpr size_t vecLength = 3;
 #endif
 			public:
 				static void* operator new(std::size_t size);
@@ -241,10 +239,10 @@ namespace KEngine
 			};
 
 			template<>
-			class alignas(XMVectorAlignment) Matrix<4, 4>
+			class alignas(M128Alignment) Matrix<4, 4>
 			{
-				static const size_t numVectors = 4;
-				static const size_t vecLength = 4;
+				static constexpr size_t numVectors = 4;
+				static constexpr size_t vecLength = 4;
 
 			public:
 				static void* operator new(std::size_t size);
